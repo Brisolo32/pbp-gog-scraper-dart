@@ -1,2 +1,3 @@
-A sample command-line application with an entrypoint in `bin/`, library code
-in `lib/`, and example unit test in `test/`.
+# pbp-gog-scraper-dart
+
+A Dart version of [pbp-gog-scraper](https://github.com/brisolo32/pbp-gog-scraper), it's much faster
