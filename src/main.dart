@@ -2,6 +2,11 @@ import 'dart:convert';
 import 'dart:io';
 import "package:http/http.dart" as http;
 
+String returnString() {
+  print('Cache location wasn\'t provided, using: "./cache.json"');
+  return "./cache.json";
+}
+
 void main(List<String> args) async {
   // Checks if no arguments were provided
   if (args.isEmpty) {
@@ -11,7 +16,7 @@ void main(List<String> args) async {
 
   // Arguments
   String query = args[0];
-  String cache = args[0].isEmpty ? args[0] : "./cache.json"; print('Cache location wasn\'t provided, using: "./cache.json"');
+  String cache = !args.asMap().containsKey(1) ?  returnString() : args[1];
 
   Map uriData = {
     'uri': 'embed.gog.com',
