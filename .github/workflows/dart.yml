@@ -34,3 +34,8 @@ jobs:
       # Consider passing '--fatal-infos' for slightly stricter analysis.
       - name: Compile app
         run: dart compile exe -o GOG.exe src/main.dart
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v3
+        with:
+          name: Plugin
+          path: GOG.exe
