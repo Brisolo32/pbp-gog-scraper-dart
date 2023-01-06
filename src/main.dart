@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 import "package:http/http.dart" as http;
+import "package:path/path.dart" as path;
 
 String returnString() {
   print('Cache location wasn\'t provided, using: "./"');
@@ -53,6 +54,6 @@ void main(List<String> args) async {
   }
 
   // Writes the file to the cache and then logs a message
-  dynamic file = File("$cache/results.json");
+  dynamic file = File(path.join(cache, "results.json"));
   file.writeAsString(jsonEncode(resData));
 }
